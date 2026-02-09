@@ -1,2 +1,1 @@
-# testpage
-CMP testpage
+https://adrianalvarezuc.github.io/testpage/
