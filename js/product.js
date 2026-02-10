@@ -12,13 +12,24 @@ if (addToCartBtn) {
     };
 
     window.dataLayer.push({
-      event: 'add_to_cart',
-      ecommerce: {
-        currency: 'EUR',
-        value: price,
-        items: [product]
+  event: 'add_to_cart',
+  ecommerce: {
+    currency: 'EUR',
+    value: 29.99,
+    items: [
+      {
+        item_id: 'sku_12345',
+        item_name: 'Test Product',
+        item_brand: 'Test Brand',
+        item_category: 'Test Category',
+        item_variant: 'Default',
+        price: 29.99,
+        quantity: 1
       }
-    });
+    ]
+  }
+});
+
 
     console.log('add_to_cart pushed', product);
   });
