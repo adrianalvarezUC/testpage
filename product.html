@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Page</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: 'page_init',
+      page_type: 'product',
+      product_id: 'sku_12345'
+    });
+  </script>
+
+  <script src="https://www.googletagmanager.com/gtm.js?id=GTM-PLBZCT95" async></script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body id="page-product">
+  <main>
+    <article class="product" data-product-id="sku_12345">
+      <h1 class="product__title">Test Product</h1>
+      <p class="product__price" data-price="29.99">€29.99</p>
+
+      <button
+        id="btn-add-to-cart"
+        class="btn btn-primary"
+        data-product-name="Test Product"
+        data-product-price="29.99">
+        Add to Cart
+      </button>
+    </article>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>
