@@ -1,4 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMP & Tracking Test Site</title>
+
+  <!-- Usercentrics CMP (REQUIRED on every page) -->
+  <script
+    id="usercentrics-cmp"
+    src="https://web.cmp.usercentrics.eu/ui/loader.js"
+    data-settings-id="dwhftxbB6cSXvM"
+    async>
+  </script>
+
+  <!-- Data Layer init -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: 'page_init',
+      page_type: 'home'
+    });
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l !== 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PLBZCT95');
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
 <body id="page-home">
+
+  <!-- GTM noscript -->
   <noscript>
     <iframe
       src="https://www.googletagmanager.com/ns.html?id=GTM-PLBZCT95"
@@ -24,3 +67,4 @@
 
   <script src="js/main.js"></script>
 </body>
+</html>
