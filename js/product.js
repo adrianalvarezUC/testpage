@@ -4,33 +4,31 @@ if (addToCartBtn) {
   addToCartBtn.addEventListener('click', function () {
     const price = Number(this.dataset.productPrice);
 
-    const product = {
+    const item = {
       item_id: 'sku_12345',
       item_name: this.dataset.productName,
+      item_brand: 'Test Brand',
+      item_category: 'Test Category',
+      item_variant: 'Default',
       price: price,
       quantity: 1
     };
 
+    // 🔹 GA4 REQUIRED: clear previous ecommerce object
     window.dataLayer.push({
-  event: 'add_to_cart',
-  ecommerce: {
-    currency: 'EUR',
-    value: 29.99,
-    items: [
-      {
-        item_id: 'sku_12345',
-        item_name: 'Test Product',
-        item_brand: 'Test Brand',
-        item_category: 'Test Category',
-        item_variant: 'Default',
-        price: 29.99,
-        quantity: 1
+      ecommerce: null
+    });
+
+    // 🔹 Push the new GA4 ecommerce event
+    window.dataLayer.push({
+      event: 'add_to_cart',
+      ecommerce: {
+        currency: 'EUR',
+        value: price,
+        items: [item]
       }
-    ]
-  }
-});
+    });
 
-
-    console.log('add_to_cart pushed', product);
+    console.log('GA4 add_to_cart pushed', item);
   });
 }
